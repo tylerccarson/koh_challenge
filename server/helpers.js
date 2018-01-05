@@ -14,10 +14,3 @@ module.exports.sendViaMailgun = (msg, callback) => {
     callback(result);
   });
 };
-
-
-
-
-
-
-
