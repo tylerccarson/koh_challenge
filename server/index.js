@@ -1,42 +1,55 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const credentials = require('./credentials.js');
+const helpers = require('./helpers.js');
 
 app.use(express.static(__dirname + '/../public'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/email', (req, res) => {
-  res.redirect('/');
-});
-
 app.post('/email', (req, res) => {
 
-  var api_key = credentials.api_key;
-  var domain = credentials.domain;
-  var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
-   
-  var data = {
-    from: req.body.from,
+  let msg = {
     to: req.body.to,
+    from: req.body.from,
     subject: req.body.subject,
     text: req.body.content
   };
-   
-  mailgun.messages().send(data, function (error, body) {
+
+  let successBtn = 
+    '<form action="/" method="GET">\
+      <button type="submit" >Success! Back to home page.</button>\
+    </form>';
+
+  let failBtn = 
+    '<form action="/" method="GET">\
+      <button type="submit" >Send failed. Try again!</button>\
+    </form>';
+
+  helpers.sendViaMailgun(msg, (error, body) => {
     if (error) {
-      console.log(error);
 
-      //use other service!!!
+      helpers.sendViaSendGrid(msg, (error, result) => {
 
-      res.sendStatus(500);
+        if (error) {
+
+          res.send(failBtn);
+        }
+
+        res.send(successBtn);
+
+      });
     }
-    
-    res.send(body.message);
+
+    res.send(successBtn);
+
   });
 
+});
+
+app.get('/email', (req, res) => {
+  res.redirect('/');
 });
 
 let port = process.env.PORT || 3000;
