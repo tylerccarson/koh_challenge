@@ -29,17 +29,13 @@ app.post('/email', (req, res) => {
 
   helpers.sendViaMailgun(msg, (error, body) => {
     if (error) {
-
-      console.log('using sendgrid now ', error);
       helpers.sendViaSendGrid(msg, (err, result) => {
         if (err) {
           res.send(failBtn);
         }
-
         res.send(successBtn);
       });
     }
-
     res.send(successBtn);
   });
 });
