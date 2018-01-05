@@ -1,0 +1,43 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.form-email {
+  max-width: 330px;
+  padding: 5px;
+  margin: 0 auto;
+}
+.form-email .form-email-heading {
+  margin-bottom: 10px;
+}
+.form-email {
+  font-weight: normal;
+}
+.form-email .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-email .form-control:focus {
+  z-index: 2;
+}
+.form-email input[type="email"] {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-email input[type="text"] {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+textarea.form-control {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Kohactive Email Service</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Additional styles -->
+    <link rel="stylesheet" href="./styles.css">
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form action="/email" method="POST" class="form-email">
+
+        <h2 class="form-signin-heading">Send an email!</h2>
+        
+        <label for="inputUsername" class="sr-only">Enter an email address:</label>
+        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+
+        <label for="inputSubject" class="sr-only">Enter a subject line:</label>
+        <input type="text" name="subject" id="inputSubject" class="form-control" placeholder="Subject" required>
+
+        <label for="exampleFormControlTextarea1" class="sr-only">Email content:</label>
+        <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="18" placeholder="Content" required></textarea>
+ 
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+      </form>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

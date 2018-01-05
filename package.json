@@ -1,0 +1,25 @@
+{
+  "name": "koh_challenge",
+  "version": "1.0.0",
+  "description": "Kohactive Coding Challenge, email service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylerccarson/koh_challenge.git"
+  },
+  "author": "Tyler Carson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tylerccarson/koh_challenge/issues"
+  },
+  "homepage": "https://github.com/tylerccarson/koh_challenge#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mailgun-js": "^0.14.1",
+    "nodemon": "^1.14.7"
+  }
+}
