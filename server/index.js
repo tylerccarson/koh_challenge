@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const credentials = require('./credentials.js');
 
 app.use(express.static(__dirname + '/../public'));
 
@@ -13,8 +14,8 @@ app.get('/email', (req, res) => {
 
 app.post('/email', (req, res) => {
 
-  var api_key = 'key-beb3e042e4930cb11f422165edc0a054';
-  var domain = 'sandbox5f1fbe91043b482b84d8e180a36b5f33.mailgun.org';
+  var api_key = credentials.api_key;
+  var domain = credentials.domain;
   var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
    
   var data = {
