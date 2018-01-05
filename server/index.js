@@ -31,21 +31,16 @@ app.post('/email', (req, res) => {
     if (error) {
 
       helpers.sendViaSendGrid(msg, (error, result) => {
-
         if (error) {
-
           res.send(failBtn);
         }
 
         res.send(successBtn);
-
       });
     }
-
+    
     res.send(successBtn);
-
   });
-
 });
 
 app.get('/email', (req, res) => {
