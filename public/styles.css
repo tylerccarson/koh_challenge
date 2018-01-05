@@ -4,8 +4,12 @@ body {
   background-color: #eee;
 }
 
+h2 {
+  text-align: center;
+}
+
 .form-email {
-  max-width: 330px;
+  max-width: 600px;
   padding: 5px;
   margin: 0 auto;
 }

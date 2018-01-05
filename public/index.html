@@ -22,16 +22,19 @@
 
       <form action="/email" method="POST" class="form-email">
 
-        <h2 class="form-signin-heading">Send an email!</h2>
+        <h2 class="form-signin-heading">Send an email</h2>
         
-        <label for="inputUsername" class="sr-only">Enter an email address:</label>
-        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+        <label for="inputTo">To:</label>
+        <input type="email" name="to" id="inputTo" class="form-control" placeholder="Email" required autofocus>
 
-        <label for="inputSubject" class="sr-only">Enter a subject line:</label>
+        <label for="inputFrom">From:</label>
+        <input type="email" name="from" id="inputFrom" class="form-control" placeholder="Email" required autofocus>
+
+        <label for="inputSubject">Enter a subject line:</label>
         <input type="text" name="subject" id="inputSubject" class="form-control" placeholder="Subject" required>
 
-        <label for="exampleFormControlTextarea1" class="sr-only">Email content:</label>
-        <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="18" placeholder="Content" required></textarea>
+        <label for="exampleFormControlTextarea1">Email content:</label>
+        <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="10" placeholder="Content" required></textarea>
  
         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
       </form>
